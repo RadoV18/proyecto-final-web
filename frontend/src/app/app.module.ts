@@ -14,13 +14,15 @@ import { PruebaComponent } from './prueba/prueba.component';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
+import { NuevaVentaComponent } from './nueva-venta/nueva-venta.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
     ToolbarComponent,
-    PruebaComponent
+    PruebaComponent,
+    NuevaVentaComponent
   ],
   imports: [
     BrowserModule,
