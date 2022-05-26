@@ -1,0 +1,17 @@
+.title{
+    font-weight: bold;
+ }
+ 
+  .example-full-width {
+    width: 100%;
+  }
+
+  .agregar-producto-container{
+    margin: 5%;
+  }
+
+  img{
+    height: 100px;
+    width: 100px;
+  }
+

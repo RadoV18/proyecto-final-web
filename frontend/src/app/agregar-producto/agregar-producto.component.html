@@ -1,1 +1,18 @@
-<p>agregar-producto works!</p>
+<div class="agregar-producto-container">
+    <h2>Agregar Producto</h2>
+    <div class="container">
+        <app-input [input]="'Ingrese el Código'" value=" 18298"></app-input>
+        <app-input [input]="'Ingrese el Nombre'" value=" Marcelo"></app-input>
+        <app-textarea [label]="'Descipción'" placeholder="Ingrese la Descripción"></app-textarea>
+        <app-input [input]="'Ingrese la Marca'" value=" Patito"></app-input>
+        <app-input [input]="'Ingrese el Inventario'" value=" 12"></app-input>
+        <app-input [input]="'Ingrese el Precio por Producto'" value="12 Bs."></app-input>
+        <app-input [input]="'Ingrese la Categoría'" value=""></app-input>
+    </div>
+
+    <div class="image-container">
+        <img src="{{url}}" alt="">
+        <input type="file" (change)="selectFile($event)">
+        <!-- <app-file-upload>   </app-file-upload> -->
+    </div>
+</div>
