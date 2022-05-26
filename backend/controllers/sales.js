@@ -1,0 +1,1 @@
+const salesRouter = require("mongoose").Router();

@@ -6,6 +6,7 @@ const morgan = require('morgan');
 const cors = require('cors');
 
 // import controllers
+const productsController = require("./controllers/products");
 
 // mongoose
 mongoose.connect(config.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
@@ -21,5 +22,6 @@ app.use(morgan('tiny'));
 app.use(express.json());
 
 // use controllers
+app.use("/api/products", productsController);
 
 module.exports = app;
