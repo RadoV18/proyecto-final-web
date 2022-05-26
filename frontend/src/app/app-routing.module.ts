@@ -3,18 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { FooterComponent } from './footer/footer.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
+import { PruebaComponent } from './prueba/prueba.component';
 
 const routes: Routes = [
-  {path: '', 
-  component: AppComponent},
+  {path: 'ventas', 
+  component: PruebaComponent },
 
-  {path: 'toolbar', 
-  component: ToolbarComponent},
-  
-  {path: 'sidebar', 
-  component: SidebarComponent },
-  
   {path: 'footer', 
   component: FooterComponent},
 

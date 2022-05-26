@@ -3,6 +3,7 @@
         <button mat-icon-button>
             <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
         </button>
+
         <h1>Ferreteria UCB</h1>
         <span class="menu-spacer"></span>
     </mat-toolbar-row>
@@ -12,23 +13,21 @@
     <mat-sidenav #sidenav>
         <mat-nav-list>
             <div style="width:230px; padding:20px;">
+                <h2>Home</h2>
+                <a (click)="sidenav.toggle()" mat-button [routerLink]="'/'">Menú Home</a> <br><br>
                 <h2>Ventas</h2>
-                <a mat-button [routerLink]="'/ventas'">Todas las ventas</a> <br>
-                <a mat-button [routerLink]="'/ventas/nueva'">Nueva venta</a><br>
-                <a mat-button [routerLink]="'/ventas/detalle'">Detalle de venta</a> <br>
-
-
+                <a (click)="sidenav.toggle()" mat-button [routerLink]="'/ventas'">Todas las ventas</a> <br>
+                <a (click)="sidenav.toggle()" mat-button [routerLink]="'/ventas/nueva'">Nueva venta</a><br>
+                <a (click)="sidenav.toggle()" mat-button [routerLink]="'/ventas/detalle'">Detalle de venta</a> <br> <br>
                 <h2>Productos</h2>
-                <a mat-button [routerLink]="'/productos/agregar'">Agregar Prducto</a> <br>
-                <a mat-button [routerLink]="'/productos/eliminar'">Eliminar Producto</a><br>
-                <a mat-button [routerLink]="'/productos/modificar'">Modificar Productos</a> <br>
-
+                <a (click)="sidenav.toggle()" mat-button [routerLink]="'/productos/agregar'">Agregar Prducto</a> <br>
+                <a (click)="sidenav.toggle()" mat-button [routerLink]="'/productos/eliminar'">Eliminar Producto</a><br>
+                <a (click)="sidenav.toggle()" mat-button [routerLink]="'/productos/modificar'">Modificar Productos</a> <br> <br>
                 <h2>Contactos</h2>
-                <a mat-button [routerLink]="'/contactos/todos'">Todos los Contactos</a> <br>
-                <a mat-button [routerLink]="'/contactos/agregar'">Agregar Contacto</a> <br>
-                <a mat-button [routerLink]="'/contactos/eliminar'">Eliminar Contacto</a><br>
-                <a mat-button [routerLink]="'/contactos/modificar'">Modificar Contactos</a> <br>
-
+                <a (click)="sidenav.toggle()" mat-button [routerLink]="'/contactos/todos'">Todos los Contactos</a> <br>
+                <a (click)="sidenav.toggle()" mat-button [routerLink]="'/contactos/agregar'">Agregar Contacto</a> <br>
+                <a (click)="sidenav.toggle()" mat-button [routerLink]="'/contactos/eliminar'">Eliminar Contacto</a><br>
+                <a (click)="sidenav.toggle()" mat-button [routerLink]="'/contactos/modificar'">Modificar Contactos</a> <br>
             </div>
         </mat-nav-list>
     </mat-sidenav>
