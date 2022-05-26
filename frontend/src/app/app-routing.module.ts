@@ -12,7 +12,7 @@ const routes: Routes = [
   {path: 'toolbar', 
   component: ToolbarComponent},
   
-  {path: 'ventas', 
+  {path: 'sidebar', 
   component: SidebarComponent },
   
   {path: 'footer', 
