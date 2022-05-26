@@ -1,0 +1,14 @@
+POST http://localhost:3001/api/products
+Content-Type: application/json;charset=utf-8
+
+{
+    "name": "test1",
+    "description": "lorem ipsum asdf",
+    "brand": "test brand",
+    "availability": "En Stock",
+    "stock": 50,
+    "price": 12.99,
+    "categories": [
+        "asdf", "abcde"
+    ]
+}
