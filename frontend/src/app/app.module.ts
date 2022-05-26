@@ -15,6 +15,14 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import { NuevaVentaComponent } from './nueva-venta/nueva-venta.component';
+import { DetalleVentaComponent } from './detalle-venta/detalle-venta.component';
+import { AgregarProductoComponent } from './agregar-producto/agregar-producto.component';
+import { EliminarProductoComponent } from './eliminar-producto/eliminar-producto.component';
+import { ModificarProductoComponent } from './modificar-producto/modificar-producto.component';
+import { ContactosComponent } from './contactos/contactos.component';
+import { AgregarContactoComponent } from './agregar-contacto/agregar-contacto.component';
+import { EliminarContactoComponent } from './eliminar-contacto/eliminar-contacto.component';
+import { ModificarContactoComponent } from './modificar-contacto/modificar-contacto.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +30,15 @@ import { NuevaVentaComponent } from './nueva-venta/nueva-venta.component';
     FooterComponent,
     ToolbarComponent,
     PruebaComponent,
-    NuevaVentaComponent
+    NuevaVentaComponent,
+    DetalleVentaComponent,
+    AgregarProductoComponent,
+    EliminarProductoComponent,
+    ModificarProductoComponent,
+    ContactosComponent,
+    AgregarContactoComponent,
+    EliminarContactoComponent,
+    ModificarContactoComponent
   ],
   imports: [
     BrowserModule,
