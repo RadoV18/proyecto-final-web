@@ -49,8 +49,8 @@ productsRouter.get("/", async (req, res) => {
 // create product
 productsRouter.post("/", async (req, res) => {
     const product = new Product(req.body);
-    const savedProduct = await product.save();
-    res.status(201).json(savedProduct);
+    const savedContact = await product.save();
+    res.status(201).json(savedContact);
 });
 
 module.exports = productsRouter;

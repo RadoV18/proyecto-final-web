@@ -7,6 +7,7 @@ const cors = require('cors');
 
 // import controllers
 const productsController = require("./controllers/products");
+const contactsController = require("./controllers/contacts");
 
 // mongoose
 mongoose.connect(config.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
@@ -23,5 +24,6 @@ app.use(express.json());
 
 // use controllers
 app.use("/api/products", productsController);
+app.use("/api/contacts", contactsController);
 
 module.exports = app;

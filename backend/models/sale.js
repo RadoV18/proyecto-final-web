@@ -24,10 +24,12 @@ const salesSchema = new Schema({
     ]
 });
 
-salesSchema.set("toJSON", (document, returnedSale) => {
-    returnedSale.id = returnedSale._id.toString();
-    delete returnedSale._id;
-    delete returnedSale.__v;
+salesSchema.set("toJSON", {
+    transform: (document, returnedSale) => {
+        returnedSale.id = returnedSale._id.toString();
+        delete returnedSale._id;
+        delete returnedSale.__v;
+    }
 });
 
 module.exports = mongoose.model("Sale", salesSchema);
