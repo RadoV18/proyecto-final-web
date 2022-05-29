@@ -27,6 +27,7 @@ import { ModificarContactoComponent } from './modificar-contacto/modificar-conta
 import { InputComponent } from './input/input.component';
 import { TextareaComponent } from './textarea/textarea.component';
 import { FileUploadComponent } from './file-upload/file-upload.component';
+import { ButtonComponent } from './button/button.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { FileUploadComponent } from './file-upload/file-upload.component';
     ModificarContactoComponent,
     InputComponent,
     TextareaComponent,
-    FileUploadComponent
+    FileUploadComponent,
+    ButtonComponent
   ],
   imports: [
     BrowserModule,

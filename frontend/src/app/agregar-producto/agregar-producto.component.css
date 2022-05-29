@@ -2,16 +2,25 @@
     font-weight: bold;
  }
  
-  .example-full-width {
-    width: 100%;
-  }
-
   .agregar-producto-container{
+    display: flex;
+    flex-direction: row;
+    gap: 20%;
     margin: 5%;
   }
 
   img{
-    height: 100px;
-    width: 100px;
+    height: 500px;
+    width: 500px;
   }
+
+  .image-container{
+    flex-direction: column;
+  }
+
+  .file-container{
+    margin-bottom: 5%;
+  }
+
+  .container { }
 

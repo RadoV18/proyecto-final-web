@@ -1,1 +1,29 @@
-<p>eliminar-producto works!</p>
+<div class="agregar-producto-container">
+    <div class="container">
+        <h2>Eliminar Producto</h2>
+        <div class="eliminar-producto-container">
+            <app-input [input]="'Buscar el Código'" value=" 18298"></app-input>
+                <button mat-mini-fab color="primary" >
+                  <mat-icon>search</mat-icon>
+                </button>
+        </div>
+        <app-input [input]="'Ingrese el Nombre'" value=" Marcelo"></app-input>
+        <app-textarea [label]="'Descipción'" placeholder="Ingrese la Descripción"></app-textarea>
+        <app-input [input]="'Ingrese la Marca'" value=" Patito"></app-input>
+        <app-input [input]="'Ingrese el Inventario'" value=" 12"></app-input>
+        <app-input [input]="'Ingrese el Precio por Producto'" value="12 Bs."></app-input>
+        <app-input [input]="'Ingrese la Categoría'" value=""></app-input>
+    </div>
+
+    <div class="image-container">       
+        <div class="file-container">
+            <img src="{{url}}" alt="">
+            <input type="file" (change)="selectFile($event)">
+        </div>
+        <app-button class="agregar-producto--button" [name]="'Eliminar'"></app-button>
+
+    </div>
+
+
+
+</div>

@@ -1,0 +1,29 @@
+.title{
+    font-weight: bold;
+ }
+ 
+  .agregar-producto-container{
+    display: flex;
+    flex-direction: row;
+    gap: 20%;
+    margin: 5%;
+  }
+
+  img{
+    height: 500px;
+    width: 500px;
+  }
+
+  .image-container{
+    flex-direction: column;
+  }
+
+  .file-container{
+    margin-bottom: 5%;
+  }
+
+  .eliminar-producto-container{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
