@@ -28,6 +28,7 @@ import { InputComponent } from './input/input.component';
 import { TextareaComponent } from './textarea/textarea.component';
 import { FileUploadComponent } from './file-upload/file-upload.component';
 import { ButtonComponent } from './button/button.component';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { ButtonComponent } from './button/button.component';
     InputComponent,
     TextareaComponent,
     FileUploadComponent,
-    ButtonComponent
+    ButtonComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -59,7 +61,8 @@ import { ButtonComponent } from './button/button.component';
     MatMenuModule,
     MatSidenavModule,
     MatListModule,
-    MatInputModule
+    MatInputModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
