@@ -1,1 +1,32 @@
-<p>agregar-contacto works!</p>
+<div class="agregar-contacto-container">
+    <h2>Agregar Contacto</h2>
+    <div class="form-container">
+        <div class="form-column">
+            <app-input [input] = "'Nombres'" [value]="'Luis Francisco'"></app-input>
+            <app-input [input] = "'CI'" [value]="'6963250'"></app-input>
+        </div>
+        <div class="form-column">
+            <app-input [input] = "'Apellidos'" [value]="'Muñoz Vargas'"></app-input>
+            <app-input [input] = "'Teléfono'" [value]="'7771233'"></app-input>
+        </div>
+    </div>
+
+    <div class="form-container">
+        <div class="form-column">
+            <app-input [input] = "'Correo Electronico'" [value]="'email@gmail.com'"></app-input>
+        </div>
+    </div>
+
+    <div class="form-container">
+        <div class="form-column">
+            <app-button [name]="'Limpiar'"></app-button>
+        </div>
+        <div class="form-column">
+            <app-button [name]="'Agregar'"></app-button>
+        </div>
+
+
+    </div>
+
+    
+</div>
