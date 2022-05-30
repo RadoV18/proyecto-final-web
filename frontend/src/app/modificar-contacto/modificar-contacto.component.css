@@ -1,0 +1,30 @@
+.modificar-contacto-container{
+    margin: 5%;
+}
+
+.modificar-contacto-search{
+    display: flex;
+    
+}
+
+.contacto-information{
+    display: flex;
+    gap: 20%;
+    flex-direction: row;
+}
+
+.modification-container{
+    display: flex;
+}
+
+.btn-mo{
+    margin: 0 auto;
+}
+
+.modificar-contacto-information-container{
+    display: flex;
+}
+
+/* .modificar-contacto-information{
+    margin: 0 auto;
+} */
