@@ -1,0 +1,16 @@
+.form-container{
+    display: flex;
+    flex-direction: row;
+    gap: 20%;
+
+}
+
+.form-column{
+    margin: 0 auto;
+    margin-bottom: 5%;
+
+}
+
+.agregar-contacto-container{
+    margin: 5%;
+}

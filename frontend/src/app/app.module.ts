@@ -14,6 +14,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { MatTableModule } from '@angular/material/table';
 
 const MaterialModules = [
   MatToolbarModule,
@@ -23,7 +24,8 @@ const MaterialModules = [
   MatButtonModule,
   MatMenuModule,
   MatSidenavModule,
-  MatListModule
+  MatListModule,
+  MatTableModule
 ];
 
 // Components
@@ -61,7 +63,8 @@ import { ButtonComponent } from './button/button.component';
     InputComponent,
     TextareaComponent,
     FileUploadComponent,
-    ButtonComponent
+    ButtonComponent,
+    
   ],
   imports: [
     BrowserModule,
