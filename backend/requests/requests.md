@@ -49,7 +49,11 @@
     "categories": [
         "categoria-a",
         "categoria-b"
-    ]
+    ],
+    "image": {
+      "type": "image/png",
+      "data": "base64"
+    }
 }
 ```
 

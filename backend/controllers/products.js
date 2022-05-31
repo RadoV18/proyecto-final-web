@@ -1,11 +1,18 @@
 const productsRouter = require("express").Router();
 const Product = require("../models/product");
 
+const fs = require("fs");
+const path = require("path");
+
+// get image by product id
+productsRouter.get("/:id/image/:ext", async (req, res) => {
+    res.sendFile(path.resolve(__dirname, `../public/img/products/${req.params.id}.${req.params.ext}`));
+});
+
 // get product by id
 productsRouter.get("/:id", async (req, res) => {
-    const product = await Product
-        .findById(req.params.id);
-    
+    const product = await Product.findById(req.params.id);
+
     if (!product) {
         return res.status(404).end();
     }
@@ -20,8 +27,16 @@ productsRouter.delete("/:id", async (req, res) => {
 });
 
 // update product by id
-productsRouter.put("/:id", async ( req, res ) => {
+productsRouter.put("/:id", async (req, res) => {
     const body = req.body;
+    const image = req.body.image;
+
+    let extension = "";
+    if (image.type === "image/jpeg") {
+        extension = "jpg";
+    } else if (image.type === "image/png") {
+        extension = "png";
+    }
 
     const product = {
         name: body.name,
@@ -30,14 +45,16 @@ productsRouter.put("/:id", async ( req, res ) => {
         availability: body.availability,
         stock: body.stock,
         price: body.price,
-        categories: body.categories
+        categories: body.categories,
+        extension,
+        image: body.image,
     };
 
     Product.findByIdAndUpdate(req.params.id, product, { new: true })
-        .then(updatedProduct => {
+        .then((updatedProduct) => {
             res.json(updatedProduct);
         })
-        .catch(err => res.status(500).end());
+        .catch((err) => res.status(500).end());
 });
 
 // get all products
@@ -48,9 +65,48 @@ productsRouter.get("/", async (req, res) => {
 
 // create product
 productsRouter.post("/", async (req, res) => {
-    const product = new Product(req.body);
-    const savedContact = await product.save();
-    res.status(201).json(savedContact);
+    let error = false;
+    try {
+        // save product data
+        let productData = { ...req.body };
+        const image = req.body.image;
+        let extension = "";
+        if (image.type === "image/jpeg") {
+            extension = "jpg";
+        } else if (image.type === "image/png") {
+            extension = "png";
+        }
+
+        productData = { ...productData, extension };
+        productData = {
+            ...productData,
+            availability: productData.stock > 0 ? "En Stock" : "No Disponible",
+        };
+
+        const product = new Product(productData);
+        const savedProduct = await product.save();
+
+        // save image
+        const file = savedProduct.id;
+
+        fs.writeFile(
+            `./public/img/products/${file}.${extension}`,
+            image.data,
+            "base64",
+            (err) => {
+                error = true;
+            }
+        );
+
+        if (error) {
+            res.status(500).end();
+        } else {
+            res.status(201).json({ savedProduct });
+        }
+    } catch (err) {
+        console.error(err);
+        res.status(400).end();
+    }
 });
 
 module.exports = productsRouter;
