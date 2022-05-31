@@ -1,0 +1,15 @@
+.list-title {
+    margin-bottom: 0.5rem;
+}
+
+.list-options {
+    width: 230px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.list-options a {
+    text-align: left;
+    padding-left: 2rem;
+}

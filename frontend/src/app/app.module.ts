@@ -5,16 +5,30 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
 
-import {MatToolbarModule} from '@angular/material/toolbar';
-import { ToolbarComponent } from './toolbar/toolbar.component';
+// Angular Material
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatInputModule} from '@angular/material/input';
-import {MatIconModule} from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+
+const MaterialModules = [
+  MatToolbarModule,
+  BrowserAnimationsModule,
+  MatInputModule,
+  MatIconModule,
+  MatButtonModule,
+  MatMenuModule,
+  MatSidenavModule,
+  MatListModule
+];
+
+// Components
+import { ToolbarComponent } from './toolbar/toolbar.component';
 import { PruebaComponent } from './prueba/prueba.component';
-import {MatMenuModule} from '@angular/material/menu';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatListModule} from '@angular/material/list';
 import { NuevaVentaComponent } from './nueva-venta/nueva-venta.component';
 import { DetalleVentaComponent } from './detalle-venta/detalle-venta.component';
 import { AgregarProductoComponent } from './agregar-producto/agregar-producto.component';
@@ -54,12 +68,7 @@ import { ButtonComponent } from './button/button.component';
     AppRoutingModule,
     MatToolbarModule,
     BrowserAnimationsModule,
-    MatIconModule,
-    MatButtonModule,
-    MatMenuModule,
-    MatSidenavModule,
-    MatListModule,
-    MatInputModule
+    [MaterialModules]
   ],
   providers: [],
   bootstrap: [AppComponent]

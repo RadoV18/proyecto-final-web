@@ -1,26 +1,35 @@
-.title{
+.title {
     font-weight: bold;
- }
- 
-  .agregar-producto-container{
-    display: flex;
-    flex-direction: row;
-    gap: 20%;
-    margin: 5%;
-  }
+}
 
-  img{
+.agregar-producto-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    display: flex;
+    justify-content: space-around;
+}
+
+img {
     height: 500px;
     width: 500px;
-  }
+}
 
-  .image-container{
+.image-container {
     flex-direction: column;
-  }
+    width: 45%;
+}
 
-  .file-container{
+.file-container {
     margin-bottom: 5%;
-  }
+}
 
-  .container { }
+.container {
+    width: 45%;
+}
 
+.container .mat-form-field {
+    width: 100%;
+}
