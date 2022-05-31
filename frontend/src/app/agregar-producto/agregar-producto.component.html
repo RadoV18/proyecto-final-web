@@ -2,13 +2,34 @@
     <h1>Agregar Producto</h1>
     <div class="content">
         <div class="container">
-            <app-input [input]="'Código'"></app-input>
-            <app-input [input]="'Nombre'"></app-input>
-            <app-textarea [label]="'Descripción'"></app-textarea>
-            <app-input [input]="'Marca'"></app-input>
-            <app-input [input]="'Inventario'"></app-input>
-            <app-input [input]="'Precio unitario en Bs.'"></app-input>
-            <app-input [input]="'Categoría(s)'"></app-input>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Código</mat-label>
+                <input type="number" matInput placeholder="" [(ngModel)]="data.code">
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Nombre</mat-label>
+                <input matInput placeholder="" [(ngModel)]="data.name">
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Descripción</mat-label>
+                <textarea matInput [(ngModel)]="data.description"></textarea>
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Marca</mat-label>
+                <input matInput placeholder="" [(ngModel)]="data.brand">
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Inventario</mat-label>
+                <input type="number" matInput placeholder="" [(ngModel)]="data.stock">
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Precio unitario</mat-label>
+                <input type="number" matInput placeholder="" [(ngModel)]="data.price">
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Categoría(s)</mat-label>
+                <input matInput placeholder="" [(ngModel)]="categories">
+            </mat-form-field>
         </div>
         <div class="image-container">
             <div class="file-container__image"><img src="{{url}}" alt=""></div>
@@ -21,5 +42,5 @@
             </form>
         </div>
     </div>
-    <button mat-raised-button color="primary" class="btn-submit">Enviar</button>
+    <button mat-raised-button color="primary" (click)="submitData()" class="btn-submit">Enviar</button>
 </div>
