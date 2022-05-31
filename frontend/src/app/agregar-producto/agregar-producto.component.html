@@ -2,20 +2,24 @@
     <h1>Agregar Producto</h1>
     <div class="content">
         <div class="container">
-            <app-input [input]="'Código'" ></app-input>
-            <app-input [input]="'Nombre'" ></app-input>
-            <app-textarea [label]="'Descripción'" ></app-textarea>
-            <app-input [input]="'Marca'" ></app-input>
-            <app-input [input]="'Inventario'" ></app-input>
-            <app-input [input]="'Precio unitario en Bs.'" ></app-input>
-            <app-input [input]="'Categoría(s)'" ></app-input>
+            <app-input [input]="'Código'"></app-input>
+            <app-input [input]="'Nombre'"></app-input>
+            <app-textarea [label]="'Descripción'"></app-textarea>
+            <app-input [input]="'Marca'"></app-input>
+            <app-input [input]="'Inventario'"></app-input>
+            <app-input [input]="'Precio unitario en Bs.'"></app-input>
+            <app-input [input]="'Categoría(s)'"></app-input>
         </div>
         <div class="image-container">
-            <div class="file-container">
-                <img src="{{url}}" alt="">
-                <input type="file" (change)="selectFile($event)">
-            </div>
+            <div class="file-container__image"><img src="{{url}}" alt=""></div>
+            <form class="form">
+                <button mat-raised-button color="primary" (click)="openFileBrowser($event)" class="btn-upload">
+                    <mat-icon>add_photo_alternate</mat-icon>
+                    Subir Imagen
+                </button>
+                <input type="file" id="fileupload" (change)="selectFile($event)" class="input--hidden">
+            </form>
         </div>
     </div>
-    <app-button class="agregar-producto--button" [name]="'Enviar'"></app-button>
+    <button mat-raised-button color="primary" class="btn-submit">Enviar</button>
 </div>

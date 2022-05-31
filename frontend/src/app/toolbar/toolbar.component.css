@@ -13,3 +13,17 @@
     text-align: left;
     padding-left: 2rem;
 }
+
+.app {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex-grow: 2;
+}
+
+.mat-sidenav-container {
+    height: 100%;
+}

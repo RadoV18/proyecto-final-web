@@ -1,35 +1,38 @@
-<mat-toolbar color="primary">
-    <mat-toolbar-row>
-        <h1>Ferreteria UCB</h1>
-        <span class="menu-spacer"></span>
-    </mat-toolbar-row>
-</mat-toolbar>
-
-<mat-sidenav-container>
-    <mat-sidenav #sidenav mode="side" opened [disableClose]="true">
-        <mat-nav-list>
-            <div class="list-options">
-                <h2 class="list-title">Home</h2>
-                <a mat-button [routerLink]="'/'">Menú Home</a>
-                <h2 class="list-title">Ventas</h2>
-                <a mat-button [routerLink]="'/ventas'">Todas las ventas</a>
-                <a mat-button [routerLink]="'/ventas/nueva'">Nueva venta</a>
-                <a mat-button [routerLink]="'/ventas/detalle'">Detalle de venta</a>
-                <h2 class="list-title">Productos</h2>
-                <a mat-button [routerLink]="'/productos/agregar'">Agregar Producto</a>
-                <a mat-button [routerLink]="'/productos/eliminar'">Eliminar Producto</a>
-                <a mat-button [routerLink]="'/productos/modificar'">Modificar Producto</a>
-                <h2 class="list-title">Contactos</h2>
-                <a mat-button [routerLink]="'/contactos/todos'">Todos los Contactos</a>
-                <a mat-button [routerLink]="'/contactos/agregar'">Agregar Contacto</a>
-                <a mat-button [routerLink]="'/contactos/eliminar'">Eliminar Contacto</a>
-                <a mat-button [routerLink]="'/contactos/modificar'">Modificar Contacto</a>
-            </div>
-        </mat-nav-list>
-    </mat-sidenav>
-    <mat-sidenav-content>
-        <div style="height: 100vh;">
-            <router-outlet></router-outlet>
-        </div>
-    </mat-sidenav-content>
-</mat-sidenav-container>
+<div class="app">
+    <div class="header">
+        <mat-toolbar color="primary">
+            <mat-toolbar-row>
+                <h1>Ferreteria UCB</h1>
+                <span class="menu-spacer"></span>
+            </mat-toolbar-row>
+        </mat-toolbar>
+    </div>
+    <div class="content">
+        <mat-sidenav-container>
+            <mat-sidenav #sidenav mode="side" opened [disableClose]="true">
+                <mat-nav-list>
+                    <div class="list-options">
+                        <h2 class="list-title">Home</h2>
+                        <a mat-button [routerLink]="'/'">Menú Home</a>
+                        <h2 class="list-title">Ventas</h2>
+                        <a mat-button [routerLink]="'/ventas'">Todas las ventas</a>
+                        <a mat-button [routerLink]="'/ventas/nueva'">Nueva venta</a>
+                        <a mat-button [routerLink]="'/ventas/detalle'">Detalle de venta</a>
+                        <h2 class="list-title">Productos</h2>
+                        <a mat-button [routerLink]="'/productos/agregar'">Agregar Producto</a>
+                        <a mat-button [routerLink]="'/productos/eliminar'">Eliminar Producto</a>
+                        <a mat-button [routerLink]="'/productos/modificar'">Modificar Producto</a>
+                        <h2 class="list-title">Contactos</h2>
+                        <a mat-button [routerLink]="'/contactos/todos'">Todos los Contactos</a>
+                        <a mat-button [routerLink]="'/contactos/agregar'">Agregar Contacto</a>
+                        <a mat-button [routerLink]="'/contactos/eliminar'">Eliminar Contacto</a>
+                        <a mat-button [routerLink]="'/contactos/modificar'">Modificar Contacto</a>
+                    </div>
+                </mat-nav-list>
+            </mat-sidenav>
+            <mat-sidenav-content>
+                <router-outlet></router-outlet>
+            </mat-sidenav-content>
+        </mat-sidenav-container>
+    </div>
+</div>
