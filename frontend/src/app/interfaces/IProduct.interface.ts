@@ -1,3 +1,7 @@
+interface IImage {
+    type: string;
+    data: string;
+}
 export interface IProduct {
     code: number | null;
     name: string;
@@ -6,5 +10,5 @@ export interface IProduct {
     stock: number | null;
     price: number | null;
     categories: string[];
-    image: string;
+    image: IImage;
 }

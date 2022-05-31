@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { IProduct } from './IProduct.interface';
+import { IProduct } from '../interfaces/IProduct.interface';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-agregar-producto',
@@ -11,7 +12,6 @@ import { IProduct } from './IProduct.interface';
 export class AgregarProductoComponent implements OnInit {
   @Input() url: string;
   categories: string = '';
-  imageBase64: string = '';
   data: IProduct = {
     code: null,
     name: '',
@@ -20,19 +20,44 @@ export class AgregarProductoComponent implements OnInit {
     stock: null,
     price: null,
     categories: [],
-    image: ''
+    image: {
+      type: '',
+      data: '',
+    }
   };
 
-  constructor(private http: HttpClient) {
-    this.url = '/assets/image.jpg';
+  constructor(private http: HttpClient, private _snackbar: MatSnackBar ) {
+    this.url = '/assets/image.png';
   }
 
   submitData() {
+    this.data.image.data = this.data.image.data.replace("data:", "")
+            .replace(/^.+,/, "");
     this.data.categories = this.categories.split(', ');    
-    console.log(this.data);
-    // this.http.post<any>('/api/products', payload).subscribe(data => {
-      
-    // })
+    this.http.post<any>('http://localhost:3001/api/products', this.data).subscribe({
+      next: _data => {
+        // show success message
+        this._snackbar.open('Producto creado de forma exitosa.', 'Aceptar');
+        this.data = {
+          code: null,
+          name: '',
+          description: '',
+          brand: '',
+          stock: null,
+          price: null,
+          categories: [],
+          image: {
+            type: '',
+            data: '',
+          }
+        };
+        this.url = "./assets/image.png";
+      },
+      error: _err => {
+        // show error message
+        this._snackbar.open('Ocurrió un error.', 'Aceptar');
+      }
+    });
   }
 
   openFileBrowser(event: any) {
@@ -45,22 +70,20 @@ export class AgregarProductoComponent implements OnInit {
     if (event.target.files) {
       var reader = new FileReader();
       reader.readAsDataURL(event.target.files[0]);
+
+      this.data.image.type = event.target.files[0].type;
+
       reader.onload = (event: any) => {
         const image = new Image();
         image.src = event.target.result;
         image.onload = rs => {
-          this.imageBase64 = event.target.result;
-          console.log(this.imageBase64);
+          this.data.image.data = event.target.result;
         }
         this.url = event.target.result;
-        console.log(this.url);
       }
-    } else {
-      console.log("Nada");
     }
   }
 
   ngOnInit(): void {
   }
-
 }
