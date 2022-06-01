@@ -1,29 +1,49 @@
-<div class="agregar-producto-container">
-    <div class="container">
-        <h2>Eliminar Producto</h2>
-        <div class="eliminar-producto-container">
-            <app-input [input]="'Buscar el Código'" value=" 18298"></app-input>
-                <button mat-mini-fab color="primary" >
-                  <mat-icon>search</mat-icon>
-                </button>
+<div class="eliminar-producto-container">
+    <h1 class="title">Eliminar Producto</h1>
+    <div class="content">
+        <div class="container">
+            <div class="search-input">
+                <mat-form-field class="code" appearance="fill">
+                    <mat-label>Código</mat-label>
+                    <input type="number" matInput placeholder="" [(ngModel)]="code" [disabled]="this.isFound">
+                </mat-form-field>
+                <div class="btn-wrapper">
+                    <button mat-mini-fab class="search-btn" (click)="search()" color="primary" [disabled]="this.isFound">
+                        <mat-icon>search</mat-icon>
+                    </button>
+                </div>
+            </div>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Nombre</mat-label>
+                <input matInput placeholder="" [(ngModel)]="data.name" [readonly]="true">
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Descripción</mat-label>
+                <textarea matInput [(ngModel)]="data.description" [readonly]="true"></textarea>
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Marca</mat-label>
+                <input matInput placeholder="" [(ngModel)]="data.brand" [readonly]="true">
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Inventario</mat-label>
+                <input type="number" matInput placeholder="" [(ngModel)]="data.stock" [readonly]="true">
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Precio unitario</mat-label>
+                <input type="number" matInput placeholder="" [(ngModel)]="data.price" [readonly]="true">
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Categoría(s)</mat-label>
+                <input matInput placeholder="" [(ngModel)]="categories" [readonly]="true">
+            </mat-form-field>
         </div>
-        <app-input [input]="'Ingrese el Nombre'" value=" Marcelo"></app-input>
-        <app-textarea [label]="'Descipción'" placeholder="Ingrese la Descripción"></app-textarea>
-        <app-input [input]="'Ingrese la Marca'" value=" Patito"></app-input>
-        <app-input [input]="'Ingrese el Inventario'" value=" 12"></app-input>
-        <app-input [input]="'Ingrese el Precio por Producto'" value="12 Bs."></app-input>
-        <app-input [input]="'Ingrese la Categoría'" value=""></app-input>
-    </div>
-
-    <div class="image-container">       
-        <div class="file-container">
-            <img src="{{url}}" alt="">
-            <input type="file" (change)="selectFile($event)">
+        <div class="image-container">
+            <div class="file-container__image"><img src="{{url}}" alt=""></div>
         </div>
-        <app-button class="agregar-producto--button" [name]="'Eliminar'"></app-button>
-
     </div>
-
-
-
+    <div class="btn__container">
+        <button mat-raised-button color="primary" (click)="clearData()" class="btn-submit">Cancelar</button>
+        <button mat-raised-button color="primary" (click)="deleteProduct()" class="btn-submit">Eliminar Producto</button>
+    </div>
 </div>

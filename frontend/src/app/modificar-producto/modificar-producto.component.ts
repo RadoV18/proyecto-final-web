@@ -66,20 +66,22 @@ export class ModificarProductoComponent implements OnInit {
   }
 
   submitData() {
-    this.data.image.data = this.data.image.data
-      .replace("data:", "")
-      .replace(/^.+,/, "");
-    this.data.categories = this.categories.split(', ');
-    this.http.put<any>(`http://localhost:3001/api/products/${this.productId}`, this.data)
-      .subscribe({
-        next: _data => {
-          this._snackbar.open('Producto modificado exitosamente.', 'Aceptar'); 
-          this.clearData();
-        },
-        error: _err => {
-          this._snackbar.open('Ocurrió un error.', 'Aceptar');
-        }
-      });
+    if(this.isFound) {
+      this.data.image.data = this.data.image.data
+        .replace("data:", "")
+        .replace(/^.+,/, "");
+      this.data.categories = this.categories.split(', ');
+      this.http.put<any>(`http://localhost:3001/api/products/${this.productId}`, this.data)
+        .subscribe({
+          next: _data => {
+            this._snackbar.open('Producto modificado exitosamente.', 'Aceptar'); 
+            this.clearData();
+          },
+          error: _err => {
+            this._snackbar.open('Ocurrió un error.', 'Aceptar');
+          }
+        });
+    }
   }
 
   clearData() {
