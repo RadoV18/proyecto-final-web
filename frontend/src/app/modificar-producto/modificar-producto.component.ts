@@ -60,7 +60,9 @@ export class ModificarProductoComponent implements OnInit {
       },
       error: (err: any) => {
         this.isFound = false;
-        this._snackbar.open('Producto no encontrado', 'Aceptar');
+        this._snackbar.open('Producto no encontrado', 'Aceptar', {
+          duration: 3000
+        });
       }
     });
   }
@@ -74,11 +76,15 @@ export class ModificarProductoComponent implements OnInit {
       this.http.put<any>(`http://localhost:3001/api/products/${this.productId}`, this.data)
         .subscribe({
           next: _data => {
-            this._snackbar.open('Producto modificado exitosamente.', 'Aceptar'); 
+            this._snackbar.open('Producto modificado exitosamente.', 'Aceptar', {
+              duration: 3000
+            }); 
             this.clearData();
           },
           error: _err => {
-            this._snackbar.open('Ocurrió un error.', 'Aceptar');
+            this._snackbar.open('Ocurrió un error.', 'Aceptar', {
+              duration: 3000
+            });
           }
         });
     }

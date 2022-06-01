@@ -2,31 +2,42 @@
     <h2>Agregar Contacto</h2>
     <div class="form-container">
         <div class="form-column">
-            <app-input [input] = "'Nombres'" [value]="'Luis Francisco'"></app-input>
-            <app-input [input] = "'CI'" [value]="'6963250'"></app-input>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Nombres</mat-label>
+                <input matInput placeholder="" [(ngModel)]="data.name">
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Apellidos</mat-label>
+                <input matInput placeholder="" [(ngModel)]="data.lastName">
+            </mat-form-field>
         </div>
         <div class="form-column">
-            <app-input [input] = "'Apellidos'" [value]="'Muñoz Vargas'"></app-input>
-            <app-input [input] = "'Teléfono'" [value]="'7771233'"></app-input>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>C.I.</mat-label>
+                <input matInput placeholder="" [(ngModel)]="data.ci">
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Teléfono</mat-label>
+                <input matInput placeholder="" [(ngModel)]="data.phone">
+            </mat-form-field>
         </div>
     </div>
 
     <div class="form-container">
         <div class="form-column">
-            <app-input [input] = "'Correo Electronico'" [value]="'email@gmail.com'"></app-input>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="" [(ngModel)]="data.email">
+            </mat-form-field>
         </div>
     </div>
 
     <div class="form-container">
         <div class="form-column">
-            <app-button [name]="'Limpiar'"></app-button>
+            <button mat-raised-button (click)="clear()" color="primary">Limpiar</button>
         </div>
         <div class="form-column">
-            <app-button [name]="'Agregar'"></app-button>
+            <button mat-raised-button (click)="submitData()" color="primary">Enviar</button>
         </div>
-
-
     </div>
-
-    
 </div>
