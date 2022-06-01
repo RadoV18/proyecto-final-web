@@ -37,7 +37,7 @@ export class AgregarProductoComponent implements OnInit {
     this.http.post<any>('http://localhost:3001/api/products', this.data).subscribe({
       next: _data => {
         // show success message
-        this._snackbar.open('Producto creado de forma exitosa.', 'Aceptar');
+        this._snackbar.open('Producto creado exitosamente.', 'Aceptar');
         this.data = {
           code: null,
           name: '',

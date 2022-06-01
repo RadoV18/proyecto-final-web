@@ -1,30 +1,56 @@
-
-<div class="agregar-producto-container">
-    <div class="container">
-        <h2>Modificar Producto</h2>
-        <div class="eliminar-producto-container">
-            <app-input [input]="'Buscar el Código'" value=" 18298"></app-input>
-                <button mat-mini-fab color="primary" >
-                  <mat-icon>search</mat-icon>
+<div class="modificar-producto-container">
+    <h1 class="title">Modificar Producto</h1>
+    <div class="content">
+        <div class="container">
+            <div class="search-input">
+                <mat-form-field class="code" appearance="fill">
+                    <mat-label>Código</mat-label>
+                    <input type="number" matInput placeholder="" [(ngModel)]="code" [disabled]="this.isFound">
+                </mat-form-field>
+                <div class="btn-wrapper">
+                    <button mat-mini-fab class="search-btn" (click)="search()" color="primary">
+                        <mat-icon>search</mat-icon>
+                    </button>
+                </div>
+            </div>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Nombre</mat-label>
+                <input matInput placeholder="" [(ngModel)]="data.name" [disabled]="!this.isFound">
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Descripción</mat-label>
+                <textarea matInput [(ngModel)]="data.description" [disabled]="!this.isFound"></textarea>
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Marca</mat-label>
+                <input matInput placeholder="" [(ngModel)]="data.brand" [disabled]="!this.isFound">
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Inventario</mat-label>
+                <input type="number" matInput placeholder="" [(ngModel)]="data.stock" [disabled]="!this.isFound">
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Precio unitario</mat-label>
+                <input type="number" matInput placeholder="" [(ngModel)]="data.price" [disabled]="!this.isFound">
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Categoría(s)</mat-label>
+                <input matInput placeholder="" [(ngModel)]="categories" [disabled]="!this.isFound">
+            </mat-form-field>
+        </div>
+        <div class="image-container">
+            <div class="file-container__image"><img src="{{url}}" alt=""></div>
+            <form class="form">
+                <button mat-raised-button color="primary" (click)="openFileBrowser($event)" class="btn-upload">
+                    <mat-icon>add_photo_alternate</mat-icon>
+                    Subir Imagen
                 </button>
+                <input type="file" id="fileupload" (change)="selectFile($event)" class="input--hidden">
+            </form>
         </div>
-        <app-input [input]="'Ingrese el Nombre'" value=" Marcelo"></app-input>
-        <app-textarea [label]="'Descipción'" placeholder="Ingrese la Descripción"></app-textarea>
-        <app-input [input]="'Ingrese la Marca'" value=" Patito"></app-input>
-        <app-input [input]="'Ingrese el Inventario'" value=" 12"></app-input>
-        <app-input [input]="'Ingrese el Precio por Producto'" value="12 Bs."></app-input>
-        <app-input [input]="'Ingrese la Categoría'" value=""></app-input>
     </div>
-
-    <div class="image-container">       
-        <div class="file-container">
-            <img src="{{url}}" alt="">
-            <input type="file" (change)="selectFile($event)">
-        </div>
-        <app-button class="agregar-producto--button" [name]="'Modificar'"></app-button>
-
+    <div class="btn__container">
+        <button mat-raised-button color="primary" (click)="clearData()" class="btn-submit">Cancelar</button>
+        <button mat-raised-button color="primary" (click)="submitData()" class="btn-submit">Enviar</button>
     </div>
-
-
-
 </div>
