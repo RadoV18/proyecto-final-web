@@ -68,11 +68,15 @@ export class EliminarProductoComponent implements OnInit {
   deleteProduct() {
     this.http.delete<any>(`http://localhost:3001/api/products/${this.productId}`).subscribe({
       next: (_data: any) => {
-        this._snackbar.open('Producto eliminado exitosamente.', 'Aceptar');
+        this._snackbar.open('Producto eliminado exitosamente.', 'Aceptar', {
+          duration: 3000
+        });
         this.clearData();
       },
       error: (_err: any) => {
-        this._snackbar.open('Ocurrió un error.', 'Aceptar');
+        this._snackbar.open('Ocurrió un error.', 'Aceptar', {
+          duration: 3000
+        });
       }
     });
   }
