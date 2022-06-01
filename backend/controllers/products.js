@@ -9,6 +9,16 @@ productsRouter.get("/:id/image/:ext", async (req, res) => {
     res.sendFile(path.resolve(__dirname, `../public/img/products/${req.params.id}.${req.params.ext}`));
 });
 
+productsRouter.get("/code/:code", async (req, res) => {
+    const product = await Product.findOne({ code: req.params.code });
+
+    if(!product) {
+        return res.status(404).end();
+    }
+
+    res.json(product);
+});
+
 // get product by id
 productsRouter.get("/:id", async (req, res) => {
     const product = await Product.findById(req.params.id);
@@ -31,7 +41,7 @@ productsRouter.put("/:id", async (req, res) => {
     const body = req.body;
     const image = req.body.image;
 
-    let extension = "";
+    let extension = image.type;
     if (image.type === "image/jpeg") {
         extension = "jpg";
     } else if (image.type === "image/png") {
@@ -39,6 +49,7 @@ productsRouter.put("/:id", async (req, res) => {
     }
 
     const product = {
+        code: body.code,
         name: body.name,
         description: body.description,
         brand: body.brand,
@@ -49,6 +60,18 @@ productsRouter.put("/:id", async (req, res) => {
         extension,
         image: body.image,
     };
+
+    // save image
+    const file = req.params.id;
+
+    fs.writeFile(
+        `./public/img/products/${file}.${extension}`,
+        image.data,
+        "base64",
+        (err) => {
+            error = true;
+        }
+    );
 
     Product.findByIdAndUpdate(req.params.id, product, { new: true })
         .then((updatedProduct) => {
