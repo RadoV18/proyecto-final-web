@@ -1,5 +1,4 @@
 import { HttpClient } from '@angular/common/http';
-import { HttpHeaders } from '@angular/common/http';
 import { Component, OnInit, Input } from '@angular/core';
 import { IProduct } from '../interfaces/IProduct.interface';
 import { MatSnackBar } from '@angular/material/snack-bar';

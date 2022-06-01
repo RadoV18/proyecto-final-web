@@ -8,7 +8,7 @@
                     <input type="number" matInput placeholder="" [(ngModel)]="code" [disabled]="this.isFound">
                 </mat-form-field>
                 <div class="btn-wrapper">
-                    <button mat-mini-fab class="search-btn" (click)="search()" color="primary">
+                    <button mat-mini-fab class="search-btn" (click)="search()" color="primary" [disabled]="this.isFound">
                         <mat-icon>search</mat-icon>
                     </button>
                 </div>
@@ -41,7 +41,7 @@
         <div class="image-container">
             <div class="file-container__image"><img src="{{url}}" alt=""></div>
             <form class="form">
-                <button mat-raised-button color="primary" (click)="openFileBrowser($event)" class="btn-upload">
+                <button mat-raised-button color="primary" (click)="openFileBrowser($event)" [disabled]="!this.isFound" class="btn-upload">
                     <mat-icon>add_photo_alternate</mat-icon>
                     Subir Imagen
                 </button>
