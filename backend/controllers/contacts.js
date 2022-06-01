@@ -13,6 +13,17 @@ contactsRouter.get("/:id", async (req, res) => {
     res.json(contact);
 });
 
+// get contact by ci
+contactsRouter.get("/ci/:ci", async (req, res) => {
+    const contact = await Contact.findOne({ "ci": req.params.ci });
+
+    if( !contact ) {
+        return res.status(404).end();
+    }
+
+    res.json(contact);
+});
+
 // delete contact by id
 contactsRouter.delete("/:id", async (req, res) => {
     await Contact.findByIdAndRemove(req.params.id);

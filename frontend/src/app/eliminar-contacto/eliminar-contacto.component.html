@@ -1,33 +1,39 @@
 <div class="eliminar-contacto-container">
     <h2>Eliminar Contacto</h2>
-    <div class="eliminar-contacto-search">
-        <app-input [input]="'CI'" [value]="'124455'"></app-input>
-        <button mat-mini-fab color="primary" >
-            <mat-icon>search</mat-icon>
-        </button>
-    </div>
-
-    <h2>Datos del Contacto</h2>
-    <div class="eliminar-contacto-information-container">
-
-        <div class="eliminar-contacto-information">
-            <div class="contacto-information">
-                <app-input [input]="'CI'" [value]="'124455'"></app-input>
-                <div class="contacto-information-column">
-                    <app-input [input]="'Nombres'" [value]="'124455'"></app-input>
-                    <app-input [input]="'Teléfonno'" [value]="'7784123'"></app-input>
-                </div>
-                <div class="contacto-information-column">
-                    <app-input [input]="'Apellidos'" [value]="'Perez'"></app-input>
-                    <app-input [input]="'Correo Electrónico'" [value]="'email@gmail.com'"></app-input>
-                </div>
-                <div class="elimination-container">
-                    <div class="btn-mo">
-                        <app-button [name]="'Eliminar'"></app-button>
-                    </div>
+    <div class="content">
+        <div class="container">
+            <div class="search-input">
+                <mat-form-field class="code" appearance="fill">
+                    <mat-label>C.I.</mat-label>
+                    <input type="number" matInput placeholder="" [(ngModel)]="ci" [disabled]="this.isFound">
+                </mat-form-field>
+                <div class="btn-wrapper">
+                    <button mat-mini-fab class="search-btn" (click)="search()" color="primary"
+                        [disabled]="this.isFound">
+                        <mat-icon>search</mat-icon>
+                    </button>
                 </div>
             </div>
-    
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Nombres</mat-label>
+                <input matInput placeholder="" [(ngModel)]="data.name" [readonly]="true">
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Apellidos</mat-label>
+                <input matInput placeholder="" [(ngModel)]="data.lastName" [readonly]="true">
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Correo Electrónico</mat-label>
+                <input matInput placeholder="" [(ngModel)]="data.email" [readonly]="true">
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Teléfono</mat-label>
+                <input matInput placeholder="" [(ngModel)]="data.phone" [readonly]="true">
+            </mat-form-field>
+        </div>
+        <div class="btn__container">
+            <button mat-raised-button color="primary" (click)="clearData()" class="btn-submit">Cancelar</button>
+            <button mat-raised-button color="primary" (click)="submitData()" class="btn-submit">Guardar Cambios</button>
         </div>
     </div>
 </div>
