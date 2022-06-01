@@ -28,6 +28,7 @@ export class AgregarContactoComponent implements OnInit {
         this._snackbar.open('Contacto creado exitosamente.', 'Aceptar', { 
           duration: 3000
         });
+        this.clear();
       },
       error: _err => {
         this._snackbar.open('Ocurrió un error.', 'Aceptar', {
