@@ -11,8 +11,8 @@
 }
 
 .titulo{
-    background-color: rgba(0, 0, 0, 0.852);
-    color: aliceblue;  
+    background-color: rgba(255, 255, 255, 0.852);
+    color: black;  
     text-align: center; 
     font-family: Verdana;
     font-size: 45px;
@@ -23,8 +23,8 @@
     margin-top: 2%;
     display: flex; 
     flex-direction: row;
-    background-color: #000000e4;
+    background-color: #ffffffe4;
     padding: 2%;
-    color: aliceblue;
+    color: rgb(0, 0, 0);
     font-size: 18px;
 }
