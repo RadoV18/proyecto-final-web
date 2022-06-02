@@ -11,8 +11,11 @@ export interface SaleElement {
 }
 
 export interface ProductElement{
+  numProd: number;
+  code: number;
   name: string;
-
+  price: number;
+  quantity: number;
 }
 
 @Component({
@@ -26,6 +29,8 @@ export class PruebaComponent implements OnInit {
   SaleDisplayedColumns: string[] = ['numVenta', 'nombres', 'apellidos', 'timestamp', 'detalle'];
   SaleDataSource: SaleElement[] = [];
 
+  ProductDisplayedColumns: string[] = ['numProd', 'codigo', 'nombre', 'precio', 'cantidad'];
+  ProductDataSource: ProductElement[] = [];
 
 
   constructor(private http: HttpClient) {}
@@ -49,15 +54,24 @@ export class PruebaComponent implements OnInit {
   }
 
   changeDetalle(idVenta: any){
-    this.popup = false;
+    console.log(idVenta);
+    this.popup = true;
     this.idVenta = idVenta;
-    // this.http.get('http://localhost:3001/api/sales/'+idVenta, {'headers': getAuthorizationHeaders()}).subscribe({
-    //   next: (data: any)=>{
-    //     this.
-    //   },
-    //   error: (err: any)=>{
-    //     console.log(err);
-    //   }
-    // })
+    this.http.get('http://localhost:3001/api/sales/products/'+ idVenta, {'headers': getAuthorizationHeaders()}).subscribe({
+      next: (data: any)=>{
+        this.ProductDataSource = data.map((product: any, index: number) => {
+          return {
+            numProd: index + 1,
+            code: product.productId.code,
+            name: product.productId.name,
+            price: product.productId.price,
+            quantity: product.quantity,
+          }
+        })
+      },
+      error: (err: any)=>{
+        console.log(err);
+      }
+    })
   }
 }
