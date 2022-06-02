@@ -20,11 +20,7 @@
     "@angular/platform-browser": "~13.3.0",
     "@angular/platform-browser-dynamic": "~13.3.0",
     "@angular/router": "~13.3.0",
-<<<<<<< HEAD
     "ng-image-slider": "^2.8.0",
-=======
-    "@ngrx/store": "^13.2.0",
->>>>>>> 7e9d53c94ba31184f289d241494e813a6414d187
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
