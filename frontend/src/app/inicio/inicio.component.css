@@ -1,0 +1,30 @@
+.page{
+    /* background-image: url("/assets/fondo.jpg"); */
+    background-color: aliceblue;
+    background-position: relative;
+    background-repeat: no-repeat;
+    background-position: top left;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5%;
+    filter: none;
+}
+
+.titulo{
+    background-color: rgba(0, 0, 0, 0.852);
+    color: aliceblue;  
+    text-align: center; 
+    font-family: Verdana;
+    font-size: 45px;
+    padding: 1%;
+}
+
+.seccion{
+    margin-top: 2%;
+    display: flex; 
+    flex-direction: row;
+    background-color: #000000e4;
+    padding: 2%;
+    color: aliceblue;
+    font-size: 18px;
+}
