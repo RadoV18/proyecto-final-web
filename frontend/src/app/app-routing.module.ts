@@ -11,9 +11,13 @@ import { ContactosComponent } from './contactos/contactos.component';
 import { AgregarContactoComponent } from './agregar-contacto/agregar-contacto.component';
 import { EliminarContactoComponent } from './eliminar-contacto/eliminar-contacto.component';
 import { ModificarContactoComponent } from './modificar-contacto/modificar-contacto.component';
+import { LoginComponent } from './login/login.component';
 
 
 const routes: Routes = [
+  {path: 'login',
+  component: LoginComponent},
+
   {path: 'ventas', 
   component: PruebaComponent},
 
