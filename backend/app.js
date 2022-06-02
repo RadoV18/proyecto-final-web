@@ -33,8 +33,8 @@ app.use("/api/auth", authController);
 app.use("/api/users", usersController);
 
 // authentication middleware
-app.use(tokenExtractor);
-app.use(userExtractor);
+// app.use(tokenExtractor);
+// app.use(userExtractor);
 
 // protected endpoints
 app.use("/api/products", productsController);

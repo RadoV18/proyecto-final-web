@@ -3,7 +3,8 @@ const Sale = require("../models/sale");
 
 // get all sales
 salesRouter.get("/", async (req, res) => {
-    const sales = await Sale.find({});
+    const sales = await Sale.find({})
+        .populate("contactId");
     res.json(sales);
 });
 
