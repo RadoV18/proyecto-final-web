@@ -11,9 +11,13 @@ import { ContactosComponent } from './contactos/contactos.component';
 import { AgregarContactoComponent } from './agregar-contacto/agregar-contacto.component';
 import { EliminarContactoComponent } from './eliminar-contacto/eliminar-contacto.component';
 import { ModificarContactoComponent } from './modificar-contacto/modificar-contacto.component';
+import { InicioComponent } from './inicio/inicio.component';
 
 
 const routes: Routes = [
+  {path: '',
+  component: InicioComponent},
+
   {path: 'ventas', 
   component: PruebaComponent},
 
@@ -46,7 +50,6 @@ const routes: Routes = [
 
   {path: 'footer', 
   component: FooterComponent},
-
 ];
 
 @NgModule({

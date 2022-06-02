@@ -18,6 +18,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { NgImageSliderModule } from 'ng-image-slider';
 
 const MaterialModules = [
   MatToolbarModule,
@@ -48,6 +49,8 @@ import { InputComponent } from './input/input.component';
 import { TextareaComponent } from './textarea/textarea.component';
 import { FileUploadComponent } from './file-upload/file-upload.component';
 import { ButtonComponent } from './button/button.component';
+import { InicioComponent } from './inicio/inicio.component';
+import { CarouselComponent } from './carousel/carousel.component';
 
 @NgModule({
   declarations: [
@@ -68,10 +71,13 @@ import { ButtonComponent } from './button/button.component';
     TextareaComponent,
     FileUploadComponent,
     ButtonComponent,
+    InicioComponent,
+    CarouselComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    NgImageSliderModule,
     MatToolbarModule,
     HttpClientModule,
     FormsModule,
