@@ -22,6 +22,19 @@ salesRouter.get("/:id", async (req, res) => {
     res.json(sale);
 });
 
+salesRouter.get("/products/:id", async (req, res) => {
+    const sale = await Sale
+        .findById(req.params.id)
+        .populate("contactId")
+        .populate("products.productId");
+
+    if(!sale){
+        res.status(404);
+    }
+
+    res.json(sale.products);
+});
+
 // create new sale
 salesRouter.post("/", async (req, res) => {
     const sale = new Sale(req.body);
