@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { IContact } from '../interfaces/IContact.interface';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { getAuthorizationHeaders } from '../utils/authHeaders';
 
 @Component({
   selector: 'app-agregar-contacto',
@@ -22,7 +23,7 @@ export class AgregarContactoComponent implements OnInit {
 
   submitData() {
     this.http.post(
-      'http://localhost:3001/api/contacts', this.data
+      'http://localhost:3001/api/contacts', this.data, {'headers': getAuthorizationHeaders()}
     ).subscribe({
       next: _data => {
         this._snackbar.open('Contacto creado exitosamente.', 'Aceptar', { 

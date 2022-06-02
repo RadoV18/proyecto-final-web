@@ -18,8 +18,14 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+<<<<<<< HEAD
 import { NgImageSliderModule } from 'ng-image-slider';
 import {MatCardModule} from '@angular/material/card';
+=======
+import { MatCardModule } from '@angular/material/card';
+import { MatGridListModule } from '@angular/material/grid-list';
+
+>>>>>>> 7e9d53c94ba31184f289d241494e813a6414d187
 
 const MaterialModules = [
   MatToolbarModule,
@@ -33,6 +39,7 @@ const MaterialModules = [
   MatTableModule,
   MatSnackBarModule,
   MatCardModule,
+  MatGridListModule
 ];
 
 // Components
@@ -54,6 +61,8 @@ import { ButtonComponent } from './button/button.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { LoginComponent } from './login/login.component';
+import { ProductCardComponent } from './product-card/product-card.component';
+import { ProductCounterComponent } from './product-counter/product-counter.component';
 
 @NgModule({
   declarations: [
@@ -74,9 +83,15 @@ import { LoginComponent } from './login/login.component';
     TextareaComponent,
     FileUploadComponent,
     ButtonComponent,
+<<<<<<< HEAD
     InicioComponent,
     CarouselComponent,
     LoginComponent
+=======
+    LoginComponent,
+    ProductCardComponent,
+    ProductCounterComponent,
+>>>>>>> 7e9d53c94ba31184f289d241494e813a6414d187
   ],
   imports: [
     BrowserModule,

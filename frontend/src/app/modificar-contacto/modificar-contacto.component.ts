@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { IContact } from '../interfaces/IContact.interface';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { getAuthorizationHeaders } from '../utils/authHeaders';
 
 @Component({
   selector: 'app-modificar-contacto',
@@ -24,7 +25,7 @@ export class ModificarContactoComponent implements OnInit {
   constructor(private http: HttpClient, private _snackbar: MatSnackBar) { }
 
   search() {
-    this.http.get(`http://localhost:3001/api/contacts/ci/${this.ci}`)
+    this.http.get(`http://localhost:3001/api/contacts/ci/${this.ci}`, {'headers': getAuthorizationHeaders()})
       .subscribe({
         next: (response: any) => {
           this.data = {
@@ -35,7 +36,7 @@ export class ModificarContactoComponent implements OnInit {
             phone: response.phone
           }
           this.isFound = true;
-          this.contactId = response.idl;
+          this.contactId = response.id;
         },
         error: (_err: any) => {
           this._snackbar.open('Contacto no encontrado', 'Aceptar', {
@@ -46,12 +47,13 @@ export class ModificarContactoComponent implements OnInit {
   }
 
   submitData() {
-    this.http.put(`http://localhost:3001/api/contacts/${this.contactId}`, this.data)
+    this.http.put(`http://localhost:3001/api/contacts/${this.contactId}`, this.data, {'headers': getAuthorizationHeaders()})
       .subscribe({
         next: (_data: any) => {
           this._snackbar.open('Contacto modificado exitosamente.', 'Aceptar', {
             duration: 3000
           });
+          this.clearData();
         },
         error: (_err: any) => {
           this._snackbar.open('Ocurrió un error', 'Aceptar', {
@@ -71,6 +73,7 @@ export class ModificarContactoComponent implements OnInit {
     };
     this.isFound = false;
     this.contactId = '';
+    this.ci = null;
   }
 
   ngOnInit(): void {

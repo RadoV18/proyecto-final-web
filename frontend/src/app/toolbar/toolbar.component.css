@@ -27,3 +27,8 @@
 .mat-sidenav-container {
     height: 100%;
 }
+
+.mat-toolbar-row {
+    display: flex;
+    justify-content: space-between;
+}

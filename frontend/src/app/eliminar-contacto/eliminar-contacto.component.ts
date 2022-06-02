@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { IContact } from '../interfaces/IContact.interface';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { getAuthorizationHeaders } from '../utils/authHeaders';
 
 @Component({
   selector: 'app-eliminar-contacto',
@@ -24,7 +25,7 @@ export class EliminarContactoComponent implements OnInit {
   constructor(private http: HttpClient, private _snackbar: MatSnackBar) { }
 
   search() {
-    this.http.get(`http://localhost:3001/api/contacts/ci/${this.ci}`)
+    this.http.get(`http://localhost:3001/api/contacts/ci/${this.ci}`, {'headers': getAuthorizationHeaders()})
       .subscribe({
         next: (response: any) => {
           this.data = {

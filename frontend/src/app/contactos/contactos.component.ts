@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit, Input } from '@angular/core';
-
+import { getAuthorizationHeaders } from '../utils/authHeaders';
 
 export interface ContactElement {
   name: string;
@@ -24,7 +24,7 @@ export class ContactosComponent implements OnInit {
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
-    this.http.get('http://localhost:3001/api/contacts').subscribe({
+    this.http.get('http://localhost:3001/api/contacts', {'headers': getAuthorizationHeaders()}).subscribe({
       next: (data: any) => {
         this.dataSource = data.map((contact: any, index: number) => {
           return {

@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, Input } from '@angular/core';
 import { IProduct } from '../interfaces/IProduct.interface';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { getAuthorizationHeaders } from '../utils/authHeaders';
 
 @Component({
   selector: 'app-modificar-producto',
@@ -29,7 +30,7 @@ export class ModificarProductoComponent implements OnInit {
     }
   };
 
-  constructor(private http: HttpClient, private _snackbar: MatSnackBar) { 
+  constructor(private http: HttpClient, private _snackbar: MatSnackBar) {
     this.url = '/assets/image.png';
   }
 
@@ -52,7 +53,7 @@ export class ModificarProductoComponent implements OnInit {
           }
         }
         this.categories = data.categories[0];
-        for(let i = 1; i < data.categories.length - 1; i++) {
+        for (let i = 1; i < data.categories.length - 1; i++) {
           this.categories += `, ${data.categories[i]}`;
         }
 
@@ -68,7 +69,7 @@ export class ModificarProductoComponent implements OnInit {
   }
 
   submitData() {
-    if(this.isFound) {
+    if (this.isFound) {
       this.data.image.data = this.data.image.data
         .replace("data:", "")
         .replace(/^.+,/, "");
@@ -78,7 +79,7 @@ export class ModificarProductoComponent implements OnInit {
           next: _data => {
             this._snackbar.open('Producto modificado exitosamente.', 'Aceptar', {
               duration: 3000
-            }); 
+            });
             this.clearData();
           },
           error: _err => {
@@ -115,7 +116,10 @@ export class ModificarProductoComponent implements OnInit {
   getImage() {
     this.http.get(
       `http://localhost:3001/api/products/${this.productId}/image/${this.data.image.type}`,
-      { responseType: 'blob' }
+      {
+        'headers': getAuthorizationHeaders(),
+        responseType: 'blob'
+      },
     )
       .subscribe(data => {
         let reader = new FileReader();
