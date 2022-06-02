@@ -1,8 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
 import { ProductCard } from '../product-card/product-card.model';
-import { addProduct, removeProduct, reset } from '../state/product.actions';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
@@ -13,7 +10,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class ProductCounterComponent implements OnInit {
   @Input() id: any;
   count: number = 0;
-  constructor(private store: Store<{ cart: Array<ProductCard> }>, private _snackbar: MatSnackBar ) { }
+  constructor(private _snackbar: MatSnackBar ) { }
 
   ngOnInit(): void {
   }
@@ -33,7 +30,6 @@ export class ProductCounterComponent implements OnInit {
       productId: objId,
       newQuantity: objQuantity
     }
-    this.store.dispatch(addProduct(props));
 
     let cart = JSON.parse(localStorage.getItem('cart') || '[]');
     let flag: boolean = true;

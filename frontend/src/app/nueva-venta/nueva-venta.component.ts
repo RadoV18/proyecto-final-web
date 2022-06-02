@@ -1,7 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-import { Store } from "@ngrx/store";
-import { Observable } from "rxjs";
-import { ProductCard } from "../product-card/product-card.model";
 
 @Component({
   selector: "app-nueva-venta",
@@ -9,7 +6,7 @@ import { ProductCard } from "../product-card/product-card.model";
   styleUrls: ["./nueva-venta.component.css"],
 })
 export class NuevaVentaComponent implements OnInit {
-  products = [
+  products =
     {
       id: "1012",
       code: 1,
@@ -22,8 +19,7 @@ export class NuevaVentaComponent implements OnInit {
       price: 200,
       categories: "Leche",
       extension: "/assets/img/products/1.jpg",
-    },
-  ];
+    };
 
   constructor() {}
 

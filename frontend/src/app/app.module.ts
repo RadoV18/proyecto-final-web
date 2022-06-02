@@ -18,7 +18,9 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
+import { MatGridListModule } from '@angular/material/grid-list';
+
 
 const MaterialModules = [
   MatToolbarModule,
@@ -32,6 +34,7 @@ const MaterialModules = [
   MatTableModule,
   MatSnackBarModule,
   MatCardModule,
+  MatGridListModule
 ];
 
 // Components
