@@ -18,7 +18,9 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
+import { MatGridListModule } from '@angular/material/grid-list';
+
 
 const MaterialModules = [
   MatToolbarModule,
@@ -32,6 +34,7 @@ const MaterialModules = [
   MatTableModule,
   MatSnackBarModule,
   MatCardModule,
+  MatGridListModule
 ];
 
 // Components
@@ -51,6 +54,8 @@ import { TextareaComponent } from './textarea/textarea.component';
 import { FileUploadComponent } from './file-upload/file-upload.component';
 import { ButtonComponent } from './button/button.component';
 import { LoginComponent } from './login/login.component';
+import { ProductCardComponent } from './product-card/product-card.component';
+import { ProductCounterComponent } from './product-counter/product-counter.component';
 
 @NgModule({
   declarations: [
@@ -72,6 +77,8 @@ import { LoginComponent } from './login/login.component';
     FileUploadComponent,
     ButtonComponent,
     LoginComponent,
+    ProductCardComponent,
+    ProductCounterComponent,
   ],
   imports: [
     BrowserModule,

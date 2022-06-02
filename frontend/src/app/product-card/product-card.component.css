@@ -1,0 +1,11 @@
+.product-card {
+    width: 300px;
+}
+
+.product-card__title {
+    text-align: center;
+}
+
+.product-card__price {
+    text-align: center;
+}
