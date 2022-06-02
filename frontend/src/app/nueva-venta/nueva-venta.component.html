@@ -1,8 +1,8 @@
-
 <mat-grid-list cols="4" rowHeight="2:4">
-    <mat-grid-tile>
-        <app-product-card id={{products.id}} name={{products.name}} description={{products.description}}
-            extension={{products.extension}} price={{products.price}} stock={{products.stock}}>
+    <mat-grid-tile *ngFor="let product of products">
+        <app-product-card id={{product.id}} name={{product.name}} description={{product.description}}
+            code={{product.code}} brand={{product.brand}} extension={{product.extension}} price={{product.price}} availability={{product.availability}}
+            stock={{product.stock}}>
         </app-product-card>
     </mat-grid-tile>
 </mat-grid-list>

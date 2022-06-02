@@ -6,10 +6,14 @@
     </mat-card-header>
     <img mat-card-image src={{extension}} alt={{name}} />
     <mat-card-content>
+        <h2 style="text-align:center;">Codigo: {{code}}</h2>
+        <h4 style="text-align:center;">{{brand}}</h4>
         <p>{{description}}</p>
-        <h2 class="product-card__price">Precio: ${{price}}</h2>
+        <h2 class="product-card__price">Precio: {{price}} Bs.</h2>
+        <h3 style="text-align:center; color: purple;">{{availability}}</h3>
         <div class="product-card__counter">
             <app-product-counter id={{id}}></app-product-counter>
         </div>
+
     </mat-card-content>
 </mat-card>
