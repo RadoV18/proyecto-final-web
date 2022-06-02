@@ -9,25 +9,25 @@
             <mat-card-content>
                 <h2>Inicio de sesión</h2>
                 <!-- <mat-error *ngIf="!loginValid"> -->
-                <mat-error>
-                    Username y/o password incorrectos.
+                <mat-error *ngIf="loginAttempt && !loginValid">
+                    Usuario y/o contraseña incorrectos.
                 </mat-error>
                 <mat-form-field>
                     <!-- <input matInput placeholder="Email" [(ngModel)]="username" name="username" required> -->
-                    <input matInput placeholder="Username" name="username" required>
-                    <mat-error>
+                    <input matInput placeholder="Username" name="username" [(ngModel)]="username" required>
+                    <mat-error *ngIf="!isUsernameValid">
                         Introduce un usuario valido
                     </mat-error>
                 </mat-form-field>
                 <mat-form-field>
                     <!-- <input matInput type="password" placeholder="Password" [(ngModel)]="password" name="password" required> -->
-                    <input matInput type="password" placeholder="Password" name="password" required>
-                    <mat-error>
+                    <input matInput type="password" placeholder="Password" name="password" [(ngModel)]="password" required>
+                    <mat-error *ngIf="!isPasswordValid">
                         Introduce un password valido
                     </mat-error>
                 </mat-form-field>
                 <!-- <button mat-raised-button color="primary" [disabled]="!loginForm.form.valid">Login</button> -->
-                <button mat-raised-button color="primary">Iniciar Sesión</button>
+                <button mat-raised-button color="primary" (click)="login()">Iniciar Sesión</button>
             </mat-card-content>
         </mat-card>
     </form>

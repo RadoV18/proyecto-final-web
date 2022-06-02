@@ -26,7 +26,7 @@ authRouter.post('/', async (req, res) => {
     const token = jwt.sign(
         userForToken,
         process.env.SECRET_KEY,
-        { expiresIn: 8 * 60 * 60 } // Token expires in 8 hours
+        { expiresIn: 72 * 60 * 60 } // Token expires in 8 hours
     );
 
     res.status(200)

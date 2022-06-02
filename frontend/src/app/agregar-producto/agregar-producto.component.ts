@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { IProduct } from '../interfaces/IProduct.interface';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { getAuthorizationHeaders } from '../utils/authHeaders';
 
 @Component({
   selector: 'app-agregar-producto',
@@ -34,7 +35,7 @@ export class AgregarProductoComponent implements OnInit {
     this.data.image.data = this.data.image.data.replace("data:", "")
             .replace(/^.+,/, "");
     this.data.categories = this.categories.split(', ');    
-    this.http.post<any>('http://localhost:3001/api/products', this.data).subscribe({
+    this.http.post<any>('http://localhost:3001/api/products', this.data, {'headers': getAuthorizationHeaders()}).subscribe({
       next: _data => {
         // show success message
         this._snackbar.open('Producto creado exitosamente.', 'Aceptar', {
