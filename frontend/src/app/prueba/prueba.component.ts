@@ -12,7 +12,7 @@ export interface SaleElement {
 
 export interface ProductElement{
   name: string;
-  
+
 }
 
 @Component({
@@ -51,13 +51,13 @@ export class PruebaComponent implements OnInit {
   changeDetalle(idVenta: any){
     this.popup = false;
     this.idVenta = idVenta;
-    this.http.get('http://localhost:3001/api/sales/'+idVenta, {'headers': getAuthorizationHeaders()}).subscribe({
-      next: (data: any)=>{
-        this.
-      },
-      error: (err: any)=>{
-        console.log(err);
-      }
-    })
+    // this.http.get('http://localhost:3001/api/sales/'+idVenta, {'headers': getAuthorizationHeaders()}).subscribe({
+    //   next: (data: any)=>{
+    //     this.
+    //   },
+    //   error: (err: any)=>{
+    //     console.log(err);
+    //   }
+    // })
   }
 }
