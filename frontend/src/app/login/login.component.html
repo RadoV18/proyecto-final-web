@@ -1,0 +1,34 @@
+<div class="login-container">
+    <form #loginForm="ngForm" method="POST" action="/api/auth">
+        <mat-card>
+            <mat-card-content>
+                <h2>Ferreteria UCB</h2>
+            </mat-card-content>
+        </mat-card>
+        <mat-card>
+            <mat-card-content>
+                <h2>Inicio de sesión</h2>
+                <!-- <mat-error *ngIf="!loginValid"> -->
+                <mat-error>
+                    Username y/o password incorrectos.
+                </mat-error>
+                <mat-form-field>
+                    <!-- <input matInput placeholder="Email" [(ngModel)]="username" name="username" required> -->
+                    <input matInput placeholder="Username" name="username" required>
+                    <mat-error>
+                        Introduce un usuario valido
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <!-- <input matInput type="password" placeholder="Password" [(ngModel)]="password" name="password" required> -->
+                    <input matInput type="password" placeholder="Password" name="password" required>
+                    <mat-error>
+                        Introduce un password valido
+                    </mat-error>
+                </mat-form-field>
+                <!-- <button mat-raised-button color="primary" [disabled]="!loginForm.form.valid">Login</button> -->
+                <button mat-raised-button color="primary">Iniciar Sesión</button>
+            </mat-card-content>
+        </mat-card>
+    </form>
+</div>

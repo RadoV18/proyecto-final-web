@@ -13,30 +13,55 @@ export class CarouselComponent implements OnInit {
    
   imgCollection: Array<object> = [
       {
-        image: 'https://loremflickr.com/g/600/400/paris',
-        thumbImage: 'https://loremflickr.com/g/1200/800/paris',
-        alt: 'Image 1',
-        title: 'Image 1'
+        image: 'http://cdn.shopify.com/s/files/1/0013/5033/6614/products/Juegodedestornilladores10piezas_1200x1200.jpg?v=1609940571',
+        thumbImage: 'http://cdn.shopify.com/s/files/1/0013/5033/6614/products/Juegodedestornilladores10piezas_1200x1200.jpg?v=1609940571',
+        alt: 'Destornilladores',
+        title: 'Destornilladores'
       }, {
-        image: 'https://loremflickr.com/600/400/brazil,rio',
-        thumbImage: 'https://loremflickr.com/1200/800/brazil,rio',
-        title: 'Image 2',
-        alt: 'Image 2'
-      }, {
-        image: 'https://loremflickr.com/600/400/paris,girl/all',
-        thumbImage: 'https://loremflickr.com/1200/800/brazil,rio',
-        title: 'Image 3',
-        alt: 'Image 3'
-      }, {
-        image: 'https://loremflickr.com/600/400/brazil,rio',
-        thumbImage: 'https://loremflickr.com/1200/800/brazil,rio',
-        title: 'Image 4',
-        alt: 'Image 4'
-      }, {
-        image: 'https://loremflickr.com/600/400/paris,girl/all',
-        thumbImage: 'https://loremflickr.com/1200/800/paris,girl/all',
-        title: 'Image 5',
-        alt: 'Image 5'
-      }
+        image: 'https://ferropari.com/wp-content/uploads/2020/06/CROWN-T-780.jpg',
+        thumbImage: 'https://ferropari.com/wp-content/uploads/2020/06/CROWN-T-780.jpg',
+        alt: 'Taladros',
+        title: 'Taladros'
+      },{
+        image: 'https://galba.com.bo/wp-content/uploads/2021/09/BO0017.jpg',
+        thumbImage: 'https://galba.com.bo/wp-content/uploads/2021/09/BO0017.jpg',
+        alt: 'Sierras',
+        title: 'Sierras'
+      },{
+        image: 'https://image.made-in-china.com/155f0j00YfeUbLuaVicB/Steel-Shovel-with-Wooden-Handle-for-Farming-Tools.jpg',
+        thumbImage: 'https://image.made-in-china.com/155f0j00YfeUbLuaVicB/Steel-Shovel-with-Wooden-Handle-for-Farming-Tools.jpg',
+        alt: 'Palas',
+        title: 'Palas'
+      },{
+        image: 'http://tornal.com.mx/catalogo/ferreteria-pintura.png',
+        thumbImage: 'http://tornal.com.mx/catalogo/ferreteria-pintura.png',
+        alt: 'Pinturas',
+        title: 'Pinturas'
+      },{
+        image: 'https://www.miferreteria.cl/wp-content/uploads/2018/10/Picota-5-Libras-mango-fibra-ZP-5F-Truper-copy.jpg',
+        thumbImage: 'https://www.miferreteria.cl/wp-content/uploads/2018/10/Picota-5-Libras-mango-fibra-ZP-5F-Truper-copy.jpg',
+        alt: 'Picotas',
+        title: 'Picotas'
+      },{
+        image: 'https://www.weitzler.cl/assets/images/ad9f1dfa9da96db324880834666935cd.jpg',
+        thumbImage: 'https://www.weitzler.cl/assets/images/ad9f1dfa9da96db324880834666935cd.jpg',
+        alt: 'Clavos',
+        title: 'Clavos'
+      },{
+        image: 'https://img.freepik.com/vector-gratis/juego-herramientas-ferreteria-tornillos-tuercas-clavos-tornillos-hierro_80590-3339.jpg?w=2000',
+        thumbImage: 'https://img.freepik.com/vector-gratis/juego-herramientas-ferreteria-tornillos-tuercas-clavos-tornillos-hierro_80590-3339.jpg?w=2000',
+        alt: 'Tornillos',
+        title: 'Tornillos'
+      },{
+        image: 'https://galba.com.bo/wp-content/uploads/2021/09/ME0032-a-ME0035.jpg',
+        thumbImage: 'https://galba.com.bo/wp-content/uploads/2021/09/ME0032-a-ME0035.jpg',
+        alt: 'Escaleras',
+        title: 'Escaleras'
+      },{
+        image: 'https://galba.com.bo/wp-content/uploads/2021/09/TR0016.jpg',
+        thumbImage: 'https://galba.com.bo/wp-content/uploads/2021/09/TR0016.jpg',
+        alt: 'Alicates',
+        title: 'Alicates'
+      },
   ];
 }

@@ -19,6 +19,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { NgImageSliderModule } from 'ng-image-slider';
+import {MatCardModule} from '@angular/material/card';
 
 const MaterialModules = [
   MatToolbarModule,
@@ -30,7 +31,8 @@ const MaterialModules = [
   MatSidenavModule,
   MatListModule,
   MatTableModule,
-  MatSnackBarModule
+  MatSnackBarModule,
+  MatCardModule,
 ];
 
 // Components
@@ -51,6 +53,7 @@ import { FileUploadComponent } from './file-upload/file-upload.component';
 import { ButtonComponent } from './button/button.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { CarouselComponent } from './carousel/carousel.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -73,6 +76,7 @@ import { CarouselComponent } from './carousel/carousel.component';
     ButtonComponent,
     InicioComponent,
     CarouselComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

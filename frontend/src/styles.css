@@ -5,3 +5,37 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+::-webkit-scrollbar {
+    width: 13px;
+    height: 13px;
+  }
+  ::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #000000;
+    border: 0px none #000000;
+    border-radius: 50px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #d4dbed;
+  }
+  ::-webkit-scrollbar-thumb:active {
+    background: #ffffff;
+  }
+  ::-webkit-scrollbar-track {
+    background: #ffffff;
+    border: 0px none #979797;
+    border-radius: 43px;
+  }
+  ::-webkit-scrollbar-track:hover {
+    background: #000000;
+  }
+  ::-webkit-scrollbar-track:active {
+    background: #9fdafd;
+  }
+  ::-webkit-scrollbar-corner {
+    background: transparent;
+  }
