@@ -51,6 +51,8 @@ import { TextareaComponent } from './textarea/textarea.component';
 import { FileUploadComponent } from './file-upload/file-upload.component';
 import { ButtonComponent } from './button/button.component';
 import { LoginComponent } from './login/login.component';
+import { ProductCardComponent } from './product-card/product-card.component';
+import { ProductCounterComponent } from './product-counter/product-counter.component';
 
 @NgModule({
   declarations: [
@@ -72,6 +74,8 @@ import { LoginComponent } from './login/login.component';
     FileUploadComponent,
     ButtonComponent,
     LoginComponent,
+    ProductCardComponent,
+    ProductCounterComponent,
   ],
   imports: [
     BrowserModule,

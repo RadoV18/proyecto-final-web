@@ -1,8 +1,24 @@
-<br>
-<br>
-<br>
-<br>
-<br>
 
+<mat-grid-list cols="4" rowHeight="2:4">
+    <mat-grid-tile *ngFor="let product of products | async">
+        <app-product-card id={{product.id}} title={{product.title}} description={{product.description}}
+            imgSrc={{product.imagePath}} price={{product.price}} quantity={{product.quantity}}>
+        </app-product-card>
+    </mat-grid-tile>
+</mat-grid-list>
 
-<p>nueva-venta works!</p>
+<!-- <mat-card class="product-card">
+    <mat-card-header>
+        <mat-card-title class="product-card__title">
+            {{name}}
+        </mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src={{imgSrc}} alt={{name}} />
+    <mat-card-content>
+        <p>{{description}}</p>
+        <h2 class="product-card__price">Precio: ${{price}}</h2>
+        <div class="product-card__counter">
+            <app-product-counter id={{id}}></app-product-counter>
+        </div>
+    </mat-card-content>
+</mat-card> -->
