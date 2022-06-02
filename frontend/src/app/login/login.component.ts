@@ -1,4 +1,5 @@
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -40,6 +41,7 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('username', data.username);
           localStorage.setItem('token', data.token);
           localStorage.setItem('name', data.name);
+          window.location.href = '/';
         },
         error: (err: any) => {
           this.loginValid = false;
@@ -49,7 +51,7 @@ export class LoginComponent implements OnInit {
 
   }
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
   }

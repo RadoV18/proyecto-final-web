@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { IContact } from '../interfaces/IContact.interface';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { getAuthorizationHeaders } from '../utils/authHeaders';
 
 @Component({
   selector: 'app-modificar-contacto',
@@ -46,7 +47,7 @@ export class ModificarContactoComponent implements OnInit {
   }
 
   submitData() {
-    this.http.put(`http://localhost:3001/api/contacts/${this.contactId}`, this.data)
+    this.http.put(`http://localhost:3001/api/contacts/${this.contactId}`, this.data, {'headers': getAuthorizationHeaders()})
       .subscribe({
         next: (_data: any) => {
           this._snackbar.open('Contacto modificado exitosamente.', 'Aceptar', {

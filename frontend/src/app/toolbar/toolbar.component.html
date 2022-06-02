@@ -1,9 +1,10 @@
 <div class="app">
     <div class="header">
         <mat-toolbar color="primary">
-            <mat-toolbar-row>
+            <mat-toolbar-row class="header__options">
                 <h1>Ferreteria UCB</h1>
                 <span class="menu-spacer"></span>
+                <button mat-button (click)="logout()"><mat-icon>logout</mat-icon>Cerrar Sesión</button>
             </mat-toolbar-row>
         </mat-toolbar>
     </div>

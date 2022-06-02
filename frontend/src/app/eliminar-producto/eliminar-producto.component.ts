@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, Input} from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { IProduct } from '../interfaces/IProduct.interface';
+import { getAuthorizationHeaders } from '../utils/authHeaders';
 
 @Component({
   selector: 'app-eliminar-producto',
@@ -66,7 +67,7 @@ export class EliminarProductoComponent implements OnInit {
   }
 
   deleteProduct() {
-    this.http.delete<any>(`http://localhost:3001/api/products/${this.productId}`).subscribe({
+    this.http.delete<any>(`http://localhost:3001/api/products/${this.productId}`, {'headers': getAuthorizationHeaders()}).subscribe({
       next: (_data: any) => {
         this._snackbar.open('Producto eliminado exitosamente.', 'Aceptar', {
           duration: 3000
