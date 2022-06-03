@@ -94,6 +94,10 @@ import { ProductCounterComponent } from './product-counter/product-counter.compo
     BrowserAnimationsModule,
     [MaterialModules]
   ],
+  exports: [
+    MatButtonModule,
+    MatInputModule,
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
