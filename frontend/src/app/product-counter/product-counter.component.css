@@ -18,3 +18,8 @@
     justify-content: center;
     margin-top: 12px;
 }
+
+.img-wrapper{
+    border: solid 1px red;
+    padding: 10px;
+}
