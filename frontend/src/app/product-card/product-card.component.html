@@ -5,11 +5,10 @@
         </mat-card-title>
     </mat-card-header>
     <div class="img-wrapper">
+        <img mat-card-image src={{extension}} alt={{name}} />
         <mat-card-content>
-            <img mat-card-image src={{extension}} alt={{name}} />
             <h2 style="text-align:center;">Codigo: {{code}}</h2>
-            <h4 style="text-align:center;">{{brand}}</h4>
-            <p>{{description}}</p>
+            <h4 style="text-align:center; font-size:20px;">{{brand}}</h4>
             <h2 class="product-card__price">Precio: {{price}} Bs.</h2>
             <h3 style="text-align:center; color: purple;">{{availability}}</h3>
             <div class="product-card__counter">

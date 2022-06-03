@@ -1,5 +1,6 @@
 .product-card {
-    height: 400px !important;
+    height: 900px !important;
+    margin-bottom: 8px;
 }
 
 .product-card__title {
@@ -10,12 +11,15 @@
     text-align: center;
 }
 
+.product-card__counter {
+    text-align: center;
+}
+
+
 .img-wrapper {
     height: 25% !important;
 }
 
-img{
-    height: 150px;
-    width: 150px;
-
+img {
+    height: 200px;
 }

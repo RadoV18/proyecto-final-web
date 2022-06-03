@@ -1,5 +1,5 @@
-<mat-grid-list cols="4" rowHeight="2:4">
-    <mat-grid-tile *ngFor="let product of products">
+<mat-grid-list cols="4" rowHeight="2:8" class="component-nueva">
+    <mat-grid-tile *ngFor="let product of products" class="component-nueva-component">
         <app-product-card id={{product.id}} name={{product.name}} description={{product.description}}
             code={{product.code}} brand={{product.brand}} extension="http://localhost:3001/api/products/{{product.id}}/image/{{product.extension}}" price={{product.price}} availability={{product.availability}}
             stock={{product.stock}}>

@@ -1,0 +1,8 @@
+.component-nueva{
+    display: flex;
+    gap: 5%;
+}
+
+.component-nueva-component{
+    order: solid 1px red;
+}
