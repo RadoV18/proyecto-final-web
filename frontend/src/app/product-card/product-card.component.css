@@ -1,5 +1,5 @@
 .product-card {
-    width: 300px;
+    height: 400px !important;
 }
 
 .product-card__title {
@@ -8,4 +8,8 @@
 
 .product-card__price {
     text-align: center;
+}
+
+.img-wrapper {
+    height: 25% !important;
 }
