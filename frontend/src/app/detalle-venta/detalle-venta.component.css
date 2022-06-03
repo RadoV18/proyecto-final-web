@@ -1,0 +1,21 @@
+table {
+    width: 100%;
+  }
+ 
+.venta-container{
+    margin: 4%;
+}
+
+.total__container {
+    display: flex;
+    padding-right: 5rem;
+    margin-top: 2rem;
+}
+
+.search-input {
+    display: flex;
+}
+
+.details {
+    display: flex;
+}
