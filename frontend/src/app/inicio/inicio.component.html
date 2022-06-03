@@ -1,7 +1,9 @@
-<article class="page">
-    <mat-card-title class="titulo">Ferreteria UCB</mat-card-title>
+<article *ngIf="!showLogin;else loginPage" class="page">
+    <div class="header">
+        <mat-card-title class="titulo">Ferreteria UCB</mat-card-title>
+        <button mat-raised-button (click)="toggle()" color="primary">Iniciar Sesión</button>
+    </div>
     <app-carousel ></app-carousel>
-
     <mat-card class="seccion">
         <img src="https://fierros.com.co/wp-content/uploads/2021/08/Estrategias-para-una-ferreteria-exitosa.png" width="45%" style="align-self: center; margin-left: 2%; border-radius: 2%; ">
         <p class="display-9" style="margin-left: 2%; font-size: larger;">
@@ -9,7 +11,7 @@
             Commodo nulla facilisi nullam vehicula ipsum a. Id donec ultrices tincidunt arcu non sodales neque.<br>
             Dignissim enim sit amet venenatis urna cursus eget. Duis ultricies lacus sed turpis tincidunt.<br>
             Quis hendrerit dolor magna eget est lorem.<br><br>
-            <a href="./ventas/nueva"><button mat-raised-button color="primary">Ver más</button></a>
+            <a href=""><button mat-raised-button color="primary">Ingresar</button></a>
         </p>
     </mat-card>
 
@@ -36,3 +38,40 @@
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1042.7710561719173!2d-68.19394936830409!3d-16.53109790425895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x915edee2d030d3cd%3A0x41f929e027f9a28c!2sAv.%20Bolivia%2C%20El%20Alto!5e0!3m2!1ses!2sbo!4v1644978626278!5m2!1ses!2sbo" width="700" height="550" style="border:0; align-self: center;" allowfullscreen="" frameborder="0" ></iframe>
     </mat-card-content>
 </article>
+
+<ng-template #loginPage>
+    <div class="login-container">
+        <form #loginForm="ngForm" method="POST" action="/api/auth">
+            <mat-card>
+                <mat-card-content>
+                    <h2>Ferreteria UCB</h2>
+                </mat-card-content>
+            </mat-card>
+            <mat-card>
+                <mat-card-content>
+                    <h2>Inicio de sesión</h2>
+                    <!-- <mat-error *ngIf="!loginValid"> -->
+                    <mat-error *ngIf="loginAttempt && !loginValid">
+                        Usuario y/o contraseña incorrectos.
+                    </mat-error>
+                    <mat-form-field>
+                        <!-- <input matInput placeholder="Email" [(ngModel)]="username" name="username" required> -->
+                        <input matInput placeholder="Username" name="username" [(ngModel)]="username" required>
+                        <mat-error *ngIf="!isUsernameValid">
+                            Introduce un usuario valido
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <!-- <input matInput type="password" placeholder="Password" [(ngModel)]="password" name="password" required> -->
+                        <input matInput type="password" placeholder="Password" name="password" [(ngModel)]="password" required>
+                        <mat-error *ngIf="!isPasswordValid">
+                            Introduce un password valido
+                        </mat-error>
+                    </mat-form-field>
+                    <!-- <button mat-raised-button color="primary" [disabled]="!loginForm.form.valid">Login</button> -->
+                    <button mat-raised-button color="primary" (click)="login()">Iniciar Sesión</button>
+                </mat-card-content>
+            </mat-card>
+        </form>
+    </div>
+</ng-template>
